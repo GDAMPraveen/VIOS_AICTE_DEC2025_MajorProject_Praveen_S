@@ -1,5 +1,25 @@
-streamlit
-pandas
-numpy
-scikit-learn
-groq
+# ==================== AI-NIDS STREAMLIT PROJECT ====================
+# Core Framework
+streamlit==1.39.0
+
+# Data Science
+pandas==2.2.2
+numpy==2.1.1
+
+# Machine Learning
+scikit-learn==1.5.1
+matplotlib==3.9.2
+seaborn==0.13.2
+
+# AI Explanation
+groq==0.9.0
+
+# ==================== DEVELOPMENT ====================
+# Optional: for Jupyter notebooks
+jupyter==1.0.0
+
+# Optional: model persistence
+joblib==1.4.2
+
+# Optional: Docker deployment
+docker==7.1.0
