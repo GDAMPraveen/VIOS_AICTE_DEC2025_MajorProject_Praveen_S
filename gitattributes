@@ -1,0 +1,50 @@
+# =====================================================
+# AI-Based NIDS Streamlit Project - Git LFS Config
+# Handles 80MB+ CSV datasets, ML models, Streamlit cache
+# =====================================================
+
+# -------- YOUR SPECIFIC DATASET --------
+Friday-WorkingHours-*.pcap_ISCX.csv filter=lfs diff=lfs merge=lfs -text
+CIC-IDS2017/*.csv filter=lfs diff=lfs merge=lfs -text
+
+# -------- STREAMLIT + PYTHON CACHE --------
+.streamlit/cache/* filter=lfs diff=lfs merge=lfs -text
+__pycache__/* filter=lfs diff=lfs merge=lfs -text
+*.pyc filter=lfs diff=lfs merge=lfs -text
+.cache/* filter=lfs diff=lfs merge=lfs -text
+
+# -------- ML MODELS --------
+*.joblib filter=lfs diff=lfs merge=lfs -text
+*.pkl filter=lfs diff=lfs merge=lfs -text
+nids_model*.joblib filter=lfs diff=lfs merge=lfs -text
+rf_model*.pkl filter=lfs diff=lfs merge=lfs -text
+
+# -------- DATA FORMATS --------
+*.csv filter=lfs diff=lfs merge=lfs -text
+*.parquet filter=lfs diff=lfs merge=lfs -text
+*.npy filter=lfs diff=lfs merge=lfs -text
+*.npz filter=lfs diff=lfs merge=lfs -text
+*.jsonl filter=lfs diff=lfs merge=lfs -text
+
+# -------- ARCHIVES --------
+*.zip *.tar *.tar.gz *.7z *.rar filter=lfs diff=lfs merge=lfs -text
+
+# -------- LFS INTERNALS --------
+*.lfs.* filter=lfs diff=lfs merge=lfs -text
+*tfevents* filter=lfs diff=lfs merge=lfs -text
+
+# -------- TEXT FILES (NORMAL GIT) --------
+*.py text eol=lf linguist-language=python diff
+*.md text eol=lf linguist-language=markdown diff
+requirements*.txt text eol=lf
+*.yml *.yaml text eol=lf linguist-language=yaml diff
+*.toml text eol=lf linguist-language=toml diff
+*.ini text eol=lf linguist-language=ini diff
+*.json text eol=lf
+Dockerfile text eol=lf linguist-language=dockerfile diff
+
+# -------- NORMALIZE & MERGE --------
+* text=auto eol=lf
+*.md merge=union
+README.md merge=union
+*.txt merge=union
